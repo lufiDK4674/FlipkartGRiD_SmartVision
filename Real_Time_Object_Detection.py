@@ -1,8 +1,21 @@
 import cv2
 import numpy as np
 
+# # Enable OpenCL (Open Computing Language)
+# cv2.ocl.setUseOpenCL(True)
+
+# # Check if OpenCL is enabled
+# if cv2.ocl.haveOpenCL():
+#     print("OpenCL is enabled.")
+# else:
+#     print("OpenCL is not available.")
+
 # Load YOLO model
 net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
+
+# Set the backend and target to OpenCL
+# net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
+# net.setPreferableTarget(cv2.dnn.DNN_TARGET_OPENCL)
 
 # Load class labels
 with open("coco.names", 'r') as f:
