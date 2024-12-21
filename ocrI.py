@@ -3,7 +3,7 @@ import pytesseract
 from ultralytics import YOLO
 
 # Configure Tesseract executable path (update it to the location of your tesseract executable)
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # For Windows
+pytesseract.pytesseract.tesseract_cmd = r'D:\Program Files\Tesseract-OCR\tesseract.exe'  # For Windows
 
 # Load YOLOv8 model
 model = YOLO('yolov8s.pt')  # Use yolov8n.pt or any other YOLOv8 model you prefer
@@ -62,7 +62,7 @@ def overlay_text(frame, text):
 
 def main():
     # Capture video from webcam
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     #  cap setting
     cap.set(cv2.CAP_PROP_FRAME_WIDTH,1920)
